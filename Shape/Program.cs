@@ -19,12 +19,15 @@ namespace Shape
             //ssf.SaveNameShape();
             ssf.SaveImageShape();
 
+            Console.WriteLine("Сохранение массива фигур");
             Shape[] arr_shape = new Shape[] {new Rectangle(3,6), new Circle(4), new Triangle(5)};
             foreach (Shape shape in arr_shape)
                 shape.PrintNameShape();
             SaveArrayShapeToFile sasf = new SaveArrayShapeToFile(arr_shape, "doc");
             sasf.SaveArrayShape();
 
+
+            Console.WriteLine("Загрузка массива фигур");
             LoadArrayShapeToFile lasf = new LoadArrayShapeToFile("doc");
             Shape[] loading_array_shape = lasf.LoadArrayShape();
             foreach (Shape shape in loading_array_shape)
